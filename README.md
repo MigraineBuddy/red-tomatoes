@@ -10,7 +10,7 @@ git clone https://github.com/MigraineBuddy/red-tomatoes.git
 # change directory to repo clone
 cd ./red-tomatoes/
 # Cargo will do the rest of the heavy lifting.
-cargo build -R && cargo install --path .
+cargo build -r && cargo install --path .
 ```
 
 ### Manual install
