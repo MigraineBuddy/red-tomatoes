@@ -1,4 +1,6 @@
 # 🍅 Red-Tomatoes 😩💅
+## About
+Red-Tomatoes is a command line timer app mainly built on the [Console](https://github.com/console-rs/console) and [Clap](https://github.com/clap-rs/clap) crates. Designed while I was procrastinating to avoid procrastinating.
 ## Installation
 ### Through Cargo
 Requires a [rust installation](https://www.rust-lang.org/tools/install) to build.
