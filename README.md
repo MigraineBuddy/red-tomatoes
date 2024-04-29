@@ -1,6 +1,6 @@
 # 🍅 Red-Tomatoes 😩💅
 ## Installation
-Requires a rust installation to work.
+Requires a rust installation to build.
 ```sh
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
 cd red-tomatoes
