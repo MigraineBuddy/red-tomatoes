@@ -1,6 +1,6 @@
 # 🍅 Red-Tomatoes 😩💅
 ## About
-Red-Tomatoes is a command line timer app mainly built on the [Console](https://github.com/console-rs/console) and [Clap](https://github.com/clap-rs/clap) crates. Designed while I was procrastinating to avoid procrastinating. (I still ended up procrastinating btw ;-;)
+Red-Tomatoes is a command line timer app mainly built on the [Console](https://github.com/console-rs/console) and [Clap](https://github.com/clap-rs/clap) crates. Designed while I was procrastinating to avoid procrastinating. (I still ended up procrastinating btw ;-; ...)
 ## Installation
 ### Through Cargo
 Requires a [rust installation](https://www.rust-lang.org/tools/install) to build.
@@ -21,6 +21,13 @@ Download the [latest release](https://github.com/MigraineBuddy/red-tomatoes/rele
 ./red-tomatoes.exe --help
 ```
 
+### Uninstall
+You will be missed 😔 <3
+
+```sh
+cargo uninstall red-tomatoes
+rm -rf ./red-tomatoes/
+```
 ## Usage
 The `red-tomatoes` command comprises two subcommands that you need to know about: `pomodoro`, which is a standard pomodoro timer with default work and break time durations, and `timer`, which you can use as a standard timer.
 ```sh
