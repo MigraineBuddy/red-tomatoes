@@ -6,8 +6,7 @@
 -> refactor to make it neater.
 -> add progress bar for timer and pomodoro.
 -> sprinkle cutesy animation and tweaks around.
--> Enable Desktop notifications
- 
+
  */
 
 pub mod cli;
