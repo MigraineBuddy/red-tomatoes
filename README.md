@@ -6,7 +6,7 @@ Requires a rust installation to build.
 # clone repository to any given folder.
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
 # change directory to repo clone
-cd red-tomatoes
+cd ./red-tomatoes/
 # cargo will do the rest of the heavy lifting.
 cargo build -R && cargo install --path .
 ```
