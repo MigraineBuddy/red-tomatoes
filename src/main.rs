@@ -2,6 +2,17 @@ use std::{io, thread, time::Duration};
 use console::{style, Term};
 use clap::{Parser, Subcommand};
 
+/*
+#TODO:
+
+-> add pause and stop buttons.
+-> refactor to make it neater.
+-> add progress bar for timer and pomodoro.
+-> add color configuration for timers (into the structs).
+-> spread out to multiple different files.
+-> sprinkle cutesy animation and tweaks around.
+ 
+ */
 
 
 #[derive(Parser)]
@@ -42,6 +53,7 @@ struct Timer {
 
 impl Timer {
     fn cycle (&self) -> io::Result<()> {
+        // #FIXME: make this less cancer.
         let mut time_left = self.timer_duration;
         let term = Term::stdout();
         term.set_title("🍅 Red Tomatoes!");
