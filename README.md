@@ -2,10 +2,12 @@
 ## Installation
 Requires a rust installation to build.
 ```sh
+# clone repository to any given folder.
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
+# change directory to repo clone
 cd red-tomatoes
-cargo build -R
-cargo install --path .
+# cargo will do the rest of the heavy lifting.
+cargo build -R && cargo install --path .
 ```
 ## Roadmap
 - add pause and stop buttons
