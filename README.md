@@ -1,4 +1,3 @@
 # 🍅 Red Tomatoes 😩💅
 ## Installation
----
 ## Dependencies
