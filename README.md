@@ -28,6 +28,8 @@ You will be missed 😔 <3
 
 ```sh
 cargo uninstall red-tomatoes
+
+# to delete the folder from the command line.
 rm -rf ./red-tomatoes/
 ```
 ## Usage
