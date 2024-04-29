@@ -20,10 +20,11 @@ Download the [latest release](https://github.com/MigraineBuddy/red-tomatoes/rele
 ```
 
 ## Usage
-The `red-tomato` command has two subcommands `pomodoro` for a standard pomodoro timer with default work and break times and a `timer` subcommand to use a standard timer.
+The `red-tomatoes` command has two subcommands `pomodoro` for a standard pomodoro timer with default work and break time durations and a `timer` subcommand to use as a standard timer.
+
 ```sh
 # for more info
-red-tomato --help 
+red-tomatoes --help 
 ```
 
 ## Roadmap
