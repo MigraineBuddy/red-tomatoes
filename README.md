@@ -4,7 +4,8 @@ Requires a rust installation to build.
 ```sh
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
 cd red-tomatoes
-cargo build
+cargo build -R
+cargo install --path .
 ```
 ## Roadmap
 - add pause and stop buttons
