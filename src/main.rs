@@ -96,6 +96,7 @@ impl Pomodoro{
         while cycles_left != 0 {
             work_timer.cycle().unwrap();
             short_break_timer.cycle().unwrap();
+            cycles_left = cycles_left - 1;
         }
         long_break_timer.cycle().unwrap();
     }
