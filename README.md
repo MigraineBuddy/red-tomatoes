@@ -7,8 +7,10 @@ Requires a [rust installation](https://www.rust-lang.org/tools/install) to build
 ```sh
 # Clone repository to any given folder.
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
+
 # change directory to repo clone
 cd ./red-tomatoes/
+
 # Cargo will do the rest of the heavy lifting.
 cargo build -r && cargo install --path .
 ```
@@ -33,9 +35,11 @@ The `red-tomatoes` command comprises two subcommands that you need to know about
 ```sh
 # Basic timer usage. (duration is in seconds)
 red-tomatoes timer --timer-name "Boiling an egg." --duration 900
+
 # Pomodoro timer usage. it'll run the default pomodoro timer if ran without any arguments.
 # Work (25 mins) -> Short Break (5 mins) -> Work -> Short Break -> Work -> Long Break (15 mins)
 red-tomatoes pomodoro
+
 # For more info.
 red-tomatoes --help 
 ```
