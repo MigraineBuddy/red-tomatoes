@@ -1,7 +1,7 @@
 # 🍅 Red-Tomatoes 😩💅
 ## Installation
 ### Through Cargo
-Requires a rust installation to build.
+Requires a [rust installation](https://www.rust-lang.org/tools/install) to build.
 ```sh
 # clone repository to any given folder.
 git clone https://github.com/MigraineBuddy/red-tomatoes.git
@@ -13,7 +13,7 @@ cargo build -R && cargo install --path .
 
 ### Manual install
 *Note: only available on windows for now.*
-Download the latest release and run directly. A rust install shouldn't be necessary.
+Download the [latest release](https://github.com/MigraineBuddy/red-tomatoes/releases) and run directly. A rust install shouldn't be necessary.
 
 ```sh
 ./red-tomatoes.exe --help
