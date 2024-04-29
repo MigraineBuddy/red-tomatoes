@@ -31,7 +31,12 @@ rm -rf ./red-tomatoes/
 ## Usage
 The `red-tomatoes` command comprises two subcommands that you need to know about: `pomodoro`, which is a standard pomodoro timer with default work and break time durations, and `timer`, which you can use as a standard timer.
 ```sh
-# For more info
+# Basic timer usage. (duration is in seconds)
+red-tomatoes timer --timer-name "Boiling an egg." --duration 900
+# Pomodoro timer usage. it'll run the default pomodoro timer if ran without any arguments.
+# Work (25 mins) -> Short Break (5 mins) -> Work -> Short Break -> Work -> Long Break (15 mins)
+red-tomatoes pomodoro
+# For more info.
 red-tomatoes --help 
 ```
 
