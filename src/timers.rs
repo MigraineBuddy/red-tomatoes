@@ -1,5 +1,5 @@
 use std::{io, thread, time::Duration};
-use console::{style, Term, Color};
+use console::{style, Term, Color, Key};
 use notify_rust::Notification;
 
 
@@ -18,6 +18,7 @@ impl Timer {
         let term = Term::stdout();
         term.set_title(self.timer_term_id.clone());
         term.write_line(&format!("Timer {} running...", style(self.timer_id.clone()).fg(self.timer_color)))?;
+        term.write_line(&format!("Press q to quit."))?;
         term.hide_cursor()?;
         term.write_line("")?;
         while time_left != 0 {
@@ -29,8 +30,8 @@ impl Timer {
                 style(minutes).fg(self.timer_color), 
                 style(seconds).fg(self.timer_color),
             ))?;
-            thread::sleep(Duration::from_secs(1));
             time_left = time_left - 1;
+            thread::sleep(Duration::from_secs(1));
         }
         term.show_cursor()?;
         term.clear_last_lines(1)?;

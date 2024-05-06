@@ -18,7 +18,7 @@ pub enum Commands {
         #[arg(short, long)]
         duration: u32,
 
-        #[arg(short, long, default_value_t = true)]
+        #[arg(long, default_value_t = true)]
         notification: bool,
 
     },
@@ -35,7 +35,7 @@ pub enum Commands {
         #[arg(short, long, default_value_t = 2)]
         number_of_cycles: u32,
 
-        #[arg(short, long, default_value_t = true)]
+        #[arg(long, default_value_t = true)]
         notification: bool,
     },
 
