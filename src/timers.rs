@@ -1,7 +1,28 @@
 use std::{io, thread, time::Duration};
-use console::{style, Term, Color, Key};
+use console::{style, Term, Color};
 use notify_rust::Notification;
 
+fn notifier (body: String,notification: bool){
+    if notification {
+    Notification::new()
+    .summary("Timer ended.")
+    .body(body.as_str())
+    .show()
+    .unwrap();
+    }
+}
+
+fn line_replacer (mut lines: usize, replacement_string: &str) -> io::Result<()> {
+    let term = Term::stdout();
+    while lines > 0 {
+        term.hide_cursor()?;
+        term.write_line(replacement_string)?;
+        term.show_cursor()?;
+        term.clear_last_lines(1)?;
+        lines -= 1;
+    }
+    Ok(())
+}
 
 pub struct Timer {
     timer_term_id: String,
@@ -12,39 +33,36 @@ pub struct Timer {
 
 
 impl Timer {
-    pub fn cycle (&self, notification: bool) -> io::Result<()> {
-        // #FIXME: make this less cancer.
+    fn count_down(&self) -> io::Result<()>{
         let mut time_left = self.timer_duration;
         let term = Term::stdout();
-        term.set_title(self.timer_term_id.clone());
-        term.write_line(&format!("Timer {} running...", style(self.timer_id.clone()).fg(self.timer_color)))?;
-        term.write_line(&format!("Press q to quit."))?;
-        term.hide_cursor()?;
-        term.write_line("")?;
         while time_left != 0 {
             let minutes = time_left / 60;
             let seconds = time_left % 60;
             term.move_cursor_up(1)?;
+            line_replacer(1, " ")?;
             term.write_line(&format!(
                 "🍅 Timer: {:02}:{:02}",
                 style(minutes).fg(self.timer_color), 
                 style(seconds).fg(self.timer_color),
             ))?;
-            time_left = time_left - 1;
+            time_left -= 1;
             thread::sleep(Duration::from_secs(1));
         }
-        term.show_cursor()?;
-        term.clear_last_lines(1)?;
-        term.write_line(&format!("{} 😩💦", style("Timer finished!").green()))?;
-        let body = format!("Timer: {} finished! 😩💦", self.timer_id.clone());
-        if notification {
-        Notification::new()
-        .summary("Timer ended.")
-        .body(&body.as_str())
-        .show()
-        .unwrap();
-        }
-
+        Ok(())
+    }
+    fn timer_boilerplate(&self) -> io::Result<()> {
+        let term = Term::stdout();
+        term.set_title(self.timer_term_id.clone());
+        term.write_line(&format!("Timer {} running...", style(self.timer_id.clone()).fg(self.timer_color)))?;
+        Ok(())
+    }
+    pub fn cycle (&self, notification: bool) -> io::Result<()> {
+        self.timer_boilerplate().unwrap();
+        self.count_down().unwrap();
+        Term::stdout().write_line(&format!("{}", style("Timer finished!").green()))?;
+        let body = format!("Timer: {} finished!", self.timer_id.clone());
+        notifier(body, notification);
         Ok(())
     }
 
@@ -87,7 +105,7 @@ impl Pomodoro{
         while cycles_left != 0 {
             work_timer.cycle(notification).unwrap();
             short_break_timer.cycle(notification).unwrap();
-            cycles_left = cycles_left - 1;
+            cycles_left -= 1;
         }
         long_break_timer.cycle(notification).unwrap();
     }

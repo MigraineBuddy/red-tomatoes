@@ -1,6 +1,11 @@
 use clap::{Parser, Subcommand};
 #[derive(Parser)]
-#[command(author = "Noelle Brooks", version = "v0.1", about = "🍅🦀 A yassified CLI Pomodoro timer written in pure rust for all your procrastination needs.", long_about = None)]
+#[command(
+    author = "Noelle Brooks", 
+    version = "v0.1", 
+    about = "🍅🦀 A yassified CLI Pomodoro timer written in pure rust for all your procrastination needs.", 
+    long_about = None
+)]
 #[command(propagate_version = true)]
 
 

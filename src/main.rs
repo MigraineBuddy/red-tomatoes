@@ -1,7 +1,6 @@
 
 /*
-#TODO:
-
+FIXME:
 -> add pause and stop buttons.
 -> refactor to make it neater.
 -> add progress bar for timer and pomodoro.
